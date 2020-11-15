@@ -1,0 +1,5 @@
+name: NetherBedFix
+version: ${project.version}
+main: me.elforax.nether_bed_fix.NetherBedFix
+api-version: 1.16
+description: Fix for nether bed explation mining
