@@ -8,7 +8,20 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * getWorlds command executor Class\.
+ * Gets the list of worlds that are listed in the configs
+ */
 public class GetWorlds implements CommandExecutor {
+
+    /**
+     * GetWorlds command executor
+     * @param sender player/console who gave the command
+     * @param command specific command
+     * @param s command text
+     * @param strings extra arguments added to the plugin
+     * @return returns boolean if command succeeded
+     */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if(sender instanceof Player){

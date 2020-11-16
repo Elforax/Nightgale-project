@@ -11,7 +11,18 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Events Class\n
+ * Runs when a event is called from its list
+ */
 public class Events implements Listener {
+
+    /**
+     * Event called when a player interacts with something.\n
+     * Will then check if it was the ground if the player holds a bed.\n
+     * If true then cancel the event to stop the placing of the bed in the given world.
+     * @param e event object
+     */
     @EventHandler(priority = EventPriority.HIGH)
     public void onBedPlace(PlayerInteractEvent e){
         Player player = e.getPlayer();
@@ -29,6 +40,11 @@ public class Events implements Listener {
         }
     }
 
+    /**
+     * check if the player holds a bed in one if there hands
+     * @param player player who needs to be checked
+     * @return returns true if a bed is found
+     */
     private boolean isBed(Player player){
         Material mainHand = player.getInventory().getItemInMainHand().getType();
         Material offHand = player.getInventory().getItemInOffHand().getType();

@@ -9,8 +9,19 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Reload command executor Class
+ */
 public class Reload implements CommandExecutor {
 
+    /**
+     * Reload command executor
+     * @param sender player/console who gave the command
+     * @param command specific command
+     * @param s command text
+     * @param strings extra arguments added to the plugin
+     * @return returns boolean if command succeeded
+     */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if(sender instanceof Player){

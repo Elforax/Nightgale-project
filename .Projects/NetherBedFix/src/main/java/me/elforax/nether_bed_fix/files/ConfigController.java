@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
+/**
+ * Config file controller Class\n
+ * Creates/Loads/Saves the Config file.\n
+ * Stores Config variables in memory after loading
+ */
 public class ConfigController {
 
     private static Plugin plugin;
@@ -83,6 +88,9 @@ public class ConfigController {
         debug = confFile.getBoolean("debug");
     }
 
+    /**
+     * Saving changes made to the Config file
+     */
     public static void save(){
         try {
             confFile.save(file);
@@ -91,16 +99,27 @@ public class ConfigController {
         }
     }
 
+    /**
+     * Reloads the config file
+     */
     public static void reload(){
         confFile = YamlConfiguration.loadConfiguration(file);
         load();
         plugin.getLogger().info(ChatColor.GOLD + "Reloaded file: " + fileName);
     }
 
+    /**
+     * returns the config file object
+     * @return config file of type FileConfiguration
+     */
     public static FileConfiguration getConfFile(){
         return confFile;
     }
 
+    /**
+     * gets a List of default Bed Types
+     * @return list of bed types of type List String
+     */
     public static List<String> defBedTypes(){
         List<String> defaultTypes = new ArrayList<>();
 
