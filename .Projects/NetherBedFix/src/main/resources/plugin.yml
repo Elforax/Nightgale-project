@@ -3,3 +3,29 @@ version: ${project.version}
 main: me.elforax.nether_bed_fix.NetherBedFix
 api-version: 1.16
 description: Fix for nether bed explation mining
+commands:
+  netherfixreload:
+    description: reloads configs
+    permission: netherfix.reload
+    permission-message: You do not have permission to use this command.
+
+  netherfixworlds:
+    description: gives the worlds
+    permission: netherfix.getworlds
+    permission-message: You do not have permission to use this command.
+
+permissions:
+  netherfix.*:
+    description: all commands
+    default: op
+    children:
+      - netherfix.reload
+      - netherfix.getworlds
+
+  netherfix.reload:
+    description: reload permission
+    default: op
+
+  netherfix.getworlds:
+    description: get worlds permission
+    default: op
