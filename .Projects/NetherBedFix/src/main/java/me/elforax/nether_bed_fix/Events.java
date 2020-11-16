@@ -9,7 +9,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 /**
  * Events Class\n
@@ -26,10 +25,10 @@ public class Events implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void onBedPlace(PlayerInteractEvent e){
         Player player = e.getPlayer();
-        Action action = e.getAction();;
+        Action action = e.getAction();
 
-        if(isBed(player)) {
-            if (action.equals(Action.RIGHT_CLICK_BLOCK)) {
+        if(action.equals(Action.RIGHT_CLICK_BLOCK)) {
+            if (isBed(player)) {
                 World world = player.getWorld();
                 String worldName = world.getName();
 
