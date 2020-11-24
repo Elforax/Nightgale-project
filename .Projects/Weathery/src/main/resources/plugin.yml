@@ -1,0 +1,6 @@
+name: Weathery
+version: ${project.version}
+main: me.elforax.weathery.Weathery
+api-version: 1.16
+authors: [ Elforax ]
+description: Weather-Climate plugin
