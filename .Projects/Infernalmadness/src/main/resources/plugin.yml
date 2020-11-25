@@ -1,0 +1,6 @@
+name: Infernalmadness
+version: ${project.version}
+main: me.elforax.infernalmadness.Infernalmadness
+api-version: 1.16
+authors: [ Elforax ]
+description: Redstone Illness plugin
