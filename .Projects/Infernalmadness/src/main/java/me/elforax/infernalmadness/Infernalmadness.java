@@ -1,7 +1,9 @@
 package me.elforax.infernalmadness;
 
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scoreboard.*;
 
 public final class Infernalmadness extends JavaPlugin {
     private Plugin instance;
@@ -12,7 +14,14 @@ public final class Infernalmadness extends JavaPlugin {
         instance = this;
         msg = new Messenger(instance);
         // Plugin startup logic vv
-        msg.info("a&" + this.getName() + " Enabled", true);
+        msg.info("1& " + this.getName() + " Enabled", true);
+
+
+        MadnessController madness = new MadnessController(instance);
+        getServer().getPluginManager().registerEvents(madness, instance);
+        madness.scoreboardTest();
+
+
     }
 
     @Override
